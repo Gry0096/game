@@ -2,10 +2,16 @@
 
 void gmain()
 {
-	window(900,900);
+	window(1920, 1080, full);
 
-	while (notQuit)	
+	repeat()
 	{
-		clear(200, 200, 200);
+		background(250,200,250);
+
+		//debug info
+		fill(255,255,255);
+		print((let)width + " " + height);
+		print((let)mouseX + " " + mouseY);
+		print(delta);
 	}
 }
