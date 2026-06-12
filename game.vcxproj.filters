@@ -8,10 +8,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="gmain.cpp" />
+    <ClCompile Include="A.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="resource.rc">
       <Filter>リソース ファイル</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="game.h" />
+    <ClInclude Include="A.h" />
   </ItemGroup>
 </Project>
