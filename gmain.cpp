@@ -1,17 +1,16 @@
-#include"libOne.h"
+﻿#include"libOne.h"
 
 void gmain()
 {
-	window(1920, 1080, full);
-
+	window(1920, 1080);
+	
 	repeat()
 	{
-		background(250,200,250);
+		background(0, 0, 0);
 
-		//debug info
-		fill(255,255,255);
-		print((let)width + " " + height);
-		print((let)mouseX + " " + mouseY);
-		print(delta);
+		//info
+		print((let)"w:" + width + " h:" + height);
+		print((let)"x:" + (int)mouseX + " y:" + (int)mouseY);
+		print((let)"delta:" + delta);
 	}
 }
