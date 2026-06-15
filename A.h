@@ -1,10 +1,11 @@
-/*
-
 #pragma once
 
-void init(struct DATA* d);
-void play(struct DATA* d);
-void over(struct DATA* d);
-void draw(struct DATA* d);
+struct CIRCLE_A
+{
+	float px, py, vx, vy, radius, enl;
+};
 
-*/
+void A_init(struct CIRCLE_A* a);
+void A_play(struct CIRCLE_A* a);
+void A_over(struct CIRCLE_A* a);
+void A_draw(struct CIRCLE_A* a);

@@ -1,5 +1,6 @@
 ﻿#include"libOne.h"
 #include"game.h"
+#include"A.h"
 
 //画面切り替え
 int Title = 0, Play = 1, Over = 2, State = Title;
@@ -19,7 +20,7 @@ struct TRIANGLE
 
 struct DATA
 {
-	struct CIRCLE a;
+	struct CIRCLE_A a;
 	struct CIRCLE b;
 	struct TRIANGLE t;
 	float enl;//enlarge(拡大)
@@ -40,18 +41,21 @@ void title(struct DATA* d)
 void init(struct DATA* d)
 {
 	//円A初期化
-	d->a.px = width / 3;
-	d->a.py = height / 2;
-	d->a.vx = 4;
-	d->a.vy = 3;
-	d->a.radius = 25;
+	A_init(&d->a);
+
+	//d->a.px = width / 3;
+	//d->a.py = height / 2;
+	//d->a.vx = 4;
+	//d->a.vy = 3;
+	//d->a.radius = 25;
+	//d->a.enl = 0.3f;
 
 	//円B初期化
 	d->b.px = 0;
 	d->b.py = 0;
 	d->b.vx = 0;
 	d->b.vy = 0;
-	d->b.radius = 25;
+	d->b.radius = 50;
 
 	//三角形初期化
 	d->t.adj = 0;
@@ -59,8 +63,6 @@ void init(struct DATA* d)
 	d->t.hyp_sqrd = 0;
 	d->t.dis_sqrd = 0;
 
-	//拡大速度
-	d->enl = 0.3f;
 }
 
 void play(struct DATA* d)
@@ -70,11 +72,13 @@ void play(struct DATA* d)
 	d->b.py = mouseY;
 
 	//円A_位置
-	d->a.px += d->a.vx;
-	d->a.py += d->a.vy;
+	/*d->a.px += d->a.vx;
+	d->a.py += d->a.vy;*/
 	
 	//円A_拡大速度
-	d->a.radius += d->enl;
+	/*d->a.radius += d->enl;*/
+
+	A_play(&d->a);
 
 	//三角形_当たり判定距離
 	d->t.adj = d->a.px - d->b.px;
@@ -83,14 +87,14 @@ void play(struct DATA* d)
 	d->t.dis_sqrd = (d->a.radius + d->b.radius) * (d->a.radius + d->b.radius);
 
 	//円A_移動挙動
-	if (d->a.px + d->a.radius > width && d->a.vx > 0 || d->a.px - d->a.radius < 0 && d->a.vx < 0)
+	/*if (d->a.px + d->a.radius > width && d->a.vx > 0 || d->a.px - d->a.radius < 0 && d->a.vx < 0)
 	{
 		d->a.vx *= -1;
 	}
 	if (d->a.py + d->a.radius > height && d->a.vy > 0 || d->a.py - d->a.radius < 0 && d->a.vy < 0)
 	{
 		d->a.vy *= -1;
-	}
+	}*/
 
 	if (d->t.hyp_sqrd < d->t.dis_sqrd)
 	{
@@ -103,11 +107,13 @@ void play(struct DATA* d)
 void over(struct DATA* d)
 {
 	//円A_移動挙動
-	d->a.vx = 0;
-	d->a.vy = 0;
+	/*d->a.vx = 0;
+	d->a.vy = 0;*/
 
 	//円A_拡大速度
-	d->enl = 0;
+	//d->enl = 0;
+
+	A_over(&d->a);
 
 	//円B_位置
 	d->b.px = d->b.px;
@@ -145,7 +151,9 @@ void draw(struct DATA* d)
 		{
 			fill(255, 0, 0, 128);
 		}
-		circle(d->a.px, d->a.py, d->a.radius * 2);
+		//circle(d->a.px, d->a.py, d->a.radius * 2);
+
+		A_draw(&d->a);
 		circle(d->b.px, d->b.py, d->b.radius * 2);
 
 		line(d->a.px, d->a.py, d->b.px, d->b.py);
