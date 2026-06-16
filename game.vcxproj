@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="A.cpp" />
     <ClCompile Include="B.cpp" />
+    <ClCompile Include="DRAW.cpp" />
     <ClCompile Include="gmain.cpp" />
     <ClCompile Include="TRIANGLE.cpp" />
   </ItemGroup>
@@ -151,6 +152,7 @@
     <ClInclude Include="A.h" />
     <ClInclude Include="B.h" />
     <ClInclude Include="CIRCLE.h" />
+    <ClInclude Include="DRAW.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="TRIANGLE.h" />
   </ItemGroup>

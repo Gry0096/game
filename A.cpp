@@ -30,6 +30,10 @@ void A_play(struct CIRCLE_A* a)
 	{
 		a->vy *= -1;
 	}
+
+	//円A_描画
+	fill(255, 255, 0, 128);
+	circle(a->px, a->py, a->radius * 2);
 }
 
 void A_over(struct CIRCLE_A* a)
@@ -40,10 +44,8 @@ void A_over(struct CIRCLE_A* a)
 
 	//円A_拡大速度
 	a->enl = 0;
-}
 
-void A_draw(struct CIRCLE_A* a)
-{
 	//円A_描画
+	fill(255, 0, 0, 128);
 	circle(a->px, a->py, a->radius * 2);
 }

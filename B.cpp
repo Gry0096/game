@@ -16,6 +16,10 @@ void B_play(struct CIRCLE_B* b)
 	//円B_位置
 	b->px = mouseX;
 	b->py = mouseY;
+
+	//円B_描画
+	fill(255, 255, 0, 128);
+	circle(b->px, b->py, b->radius * 2);
 }
 
 void B_over(struct CIRCLE_B* b)
@@ -23,6 +27,10 @@ void B_over(struct CIRCLE_B* b)
 	//円B_位置
 	b->px = b->px;
 	b->py = b->py;
+
+	//円B_描画
+	fill(255, 0, 0, 128);
+	circle(b->px, b->py, b->radius * 2);
 }
 
 void B_draw(struct CIRCLE_B* b)
