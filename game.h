@@ -1,4 +1,5 @@
 #pragma once
+
 void title(struct DATA* d);
 void init(struct DATA* d);
 void play(struct DATA* d);

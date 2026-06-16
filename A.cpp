@@ -1,10 +1,9 @@
 #include"libOne.h"
-#include"game.h"
 #include"A.h"
 
 void A_init(struct CIRCLE_A* a)
 {
-	//円A初期化
+	//円A_初期化
 	a->px = width / 3;
 	a->py = height / 2;
 	a->vx = 4;
@@ -45,5 +44,6 @@ void A_over(struct CIRCLE_A* a)
 
 void A_draw(struct CIRCLE_A* a)
 {
+	//円A_描画
 	circle(a->px, a->py, a->radius * 2);
 }
