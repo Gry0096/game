@@ -1,6 +1,5 @@
 ﻿#include"libOne.h"
 #include"game.h"
-#include"DRAW.h"
 
 //画面切り替え
 int Title = 0, Play = 1, Over = 2, State = Title;
@@ -14,8 +13,10 @@ struct DATA
 
 void title(struct DATA* d)
 {
+	//背景描画
+	background(255, 200, 255);
+
 	init(d);
-	D_title();
 
 	//画面切り替え
 	if (isTrigger(MOUSE_LBUTTON))
@@ -23,6 +24,7 @@ void title(struct DATA* d)
 		State = Play;
 	}
 
+	D_title();
 }
 
 void init(struct DATA* d)
@@ -39,7 +41,8 @@ void init(struct DATA* d)
 
 void play(struct DATA* d)
 {
-	D_play();
+	//背景描画
+	background(255, 200, 255);
 
 	//円B
 	B_play(&d->b);
@@ -56,11 +59,13 @@ void play(struct DATA* d)
 		State = Over;
 	}
 
+	D_play();
 }
 
 void over(struct DATA* d)
 {
-	D_over();
+	//背景描画
+	background(255, 200, 255);
 
 	//円A
 	A_over(&d->a);
@@ -74,6 +79,7 @@ void over(struct DATA* d)
 		State = Title;
 	}
 
+	D_over();
 }
 
 void gmain()

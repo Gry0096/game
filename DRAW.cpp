@@ -3,9 +3,6 @@
 
 void D_title()
 {
-	//背景描画
-	background(255, 200, 255);
-
 	//ロゴ描画
 	fill(70, 255, 255);
 	print("title");
@@ -18,9 +15,6 @@ void D_title()
 
 void D_play()
 {
-	//背景描画
-	background(255, 200, 255);
-
 	//ロゴ描画
 	fill(255, 255, 70);
 	print("play");
@@ -33,9 +27,6 @@ void D_play()
 
 void D_over()
 {
-	//背景描画
-	background(255, 200, 255);
-
 	//ロゴ描画
 	fill(255, 70, 255);
 	print("over");

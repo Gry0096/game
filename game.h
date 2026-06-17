@@ -1,6 +1,7 @@
 #pragma once
 #include"CIRCLE.h"
 #include"TRIANGLE.h"
+#include"DRAW.h"
 
 void title(struct DATA* d);
 void init(struct DATA* d);
